@@ -37,7 +37,7 @@ jobs:
     needs: build
     steps:
       - name: Kubernetes set context
-        uses: Azure/aks-set-context@v1
+        uses: Azure/k8s-set-context@v1
         with:
           method: kubeconfig
           kubeconfig: ${{secrets.K8S_CONFIG}} 
