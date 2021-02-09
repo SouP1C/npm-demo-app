@@ -17,14 +17,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v2
       with:
         node-version: '12.x'
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
     - name: Build and push docker image
-      uses: mr-smithers-excellent/docker-build-push@v2
+      uses: mr-smithers-excellent/docker-build-push@v4
       with:
         image: soup1c/npm-demo-app
         registry: docker.io
